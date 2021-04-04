@@ -1,0 +1,16 @@
+.Post {
+	padding: 2rem;
+	margin-top: 1rem;
+	margin-bottom: 3rem;
+	background-color: #fafafa;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.Post h1 {
+	font-size: 2.5rem;
+	font-weight: 600;
+}
+
+.Post div {
+	font-size: 1.4rem;
+}

@@ -1,0 +1,14 @@
+.Comment {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.Comment .title {
+	font-size: 1.4rem;
+	padding-bottom: 1rem;
+	color: #868e96;
+}
+
+.Comment .body {
+	color: #212529;
+	font-size: 1.2rem;
+}
