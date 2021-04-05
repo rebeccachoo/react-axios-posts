@@ -12,6 +12,7 @@
 You can simply download the files on your computer. <br />
 In terminal, install by typing `npm install`.  <br />
 And install axios by typing `npm install --save axios`.  <br />
+And install semantic-ui by typing `npm install semantic-ui`.  <br />
 And type `npm start` to start the program.
 
  
