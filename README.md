@@ -1,6 +1,6 @@
 # React - Posts
 
- 
+ This react app will get posts and comments from https://jsonplaceholder.typicode.com/ and show it to the page.
 
 | Feature | Description |
 | -----: | :----------- |
