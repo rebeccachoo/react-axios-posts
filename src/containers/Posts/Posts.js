@@ -1,22 +1,28 @@
 import React, { Component } from "react";
-import { Wrapper, Navigation, Post } from "../../components";
+import { Wrapper, Navigation, Post, Warning } from "../../components";
 import * as axios from "../../services/axios";
 import { Dimmer, Loader } from "semantic-ui-react";
 
 class Posts extends Component {
-	state = { id: 1, post: null, comments: null, loading: false };
+	state = { id: 1, post: null, comments: null, loading: false, alert: false };
 
 	componentDidMount() {
 		this.fetchPostInfo();
 	}
 	goToPrevHandler = () => {
-		if (this.state.id > 1)
+		if (this.state.id > 1) {
 			this.setState((prevState) => {
 				return {
 					...prevState,
 					id: prevState.id - 1,
 				};
 			});
+		} else {
+			this.setState({ alert: true });
+			setTimeout(() => {
+				this.setState({ alert: false });
+			}, 1000);
+		}
 		this.fetchPostInfo();
 	};
 	goToNextHandler = () => {
@@ -54,6 +60,9 @@ class Posts extends Component {
 				) : (
 					<Post post={this.state.post} comments={this.state.comments} />
 				)}
+				{this.state.alert ? (
+					<Warning message="That post does not exist" />
+				) : null}
 			</Wrapper>
 		);
 	}
