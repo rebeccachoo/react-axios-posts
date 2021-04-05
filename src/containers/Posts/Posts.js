@@ -8,12 +8,30 @@ class Posts extends Component {
 
 	componentDidMount() {
 		this.fetchPostInfo();
-		// this.setState({ ...this.state, loading: true });
 	}
+	goToPrevHandler = () => {
+		if (this.state.id > 1)
+			this.setState((prevState) => {
+				return {
+					...prevState,
+					id: prevState.id - 1,
+				};
+			});
+		this.fetchPostInfo();
+	};
+	goToNextHandler = () => {
+		this.setState((prevState) => {
+			return {
+				...prevState,
+				id: prevState.id + 1,
+			};
+		});
+		this.fetchPostInfo();
+	};
 
 	fetchPostInfo = async () => {
 		const post = await axios.getPost(this.state.id);
-		const comments = await axios.getPost(this.state.id);
+		const comments = await axios.getComments(this.state.id);
 
 		this.setState({
 			post: post.data,
@@ -24,7 +42,11 @@ class Posts extends Component {
 	render() {
 		return (
 			<Wrapper>
-				<Navigation />
+				<Navigation
+					goToPrev={this.goToPrevHandler}
+					goToNext={this.goToNextHandler}
+					pageNum={this.state.id}
+				/>
 				{!this.state.loading ? (
 					<Dimmer active inverted>
 						<Loader inverted>Loading</Loader>
