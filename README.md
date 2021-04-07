@@ -1,6 +1,6 @@
 # React - Posts
 
- This react app will get posts and comments from https://jsonplaceholder.typicode.com/ and show it to the page. It uses semantic-ui for UI. 
+ This react app will get posts and comments from https://jsonplaceholder.typicode.com/ and show it to the page. It uses semantic-ui for UI. <br /><br />
 
 | Feature | Description |
 | -----: | :----------- |
